@@ -30,6 +30,8 @@ gem 'carrierwave' #with no version number included, wil install default version 
 
 gem "font-awesome-rails"
 
+gem 'devise'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'capybara', '~> 2.3.0'
