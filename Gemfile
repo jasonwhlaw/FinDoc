@@ -28,6 +28,8 @@ gem 'spring',        group: :development
 
 gem 'carrierwave' #with no version number included, wil install default version which is usually latest
 
+gem "font-awesome-rails"
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'capybara', '~> 2.3.0'
