@@ -15,6 +15,12 @@ class DoctorsController < ApplicationController
   # GET /doctors/new
   def new
     @doctor = Doctor.new
+
+    @all_specialty = Specialty.all
+
+    # @doctor_specialty = @doctor.doctor_specialties.build
+
+
   end
 
   # GET /doctors/1/edit
@@ -25,6 +31,9 @@ class DoctorsController < ApplicationController
   # POST /doctors.json
   def create
     @doctor = Doctor.new(doctor_params)
+
+    # params[:specialties][:id].each do |specialty|
+    # end
 
     respond_to do |format|
       if @doctor.save

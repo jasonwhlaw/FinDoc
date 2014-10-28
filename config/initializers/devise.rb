@@ -12,6 +12,11 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
+# If you have more than one Devise model in your application (such as User and Admin),
+  # you will notice that Devise uses the same views for all models. Fortunately,
+  # Devise offers an easy way to customize views
+  config.scoped_views = true
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

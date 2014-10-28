@@ -27,6 +27,17 @@
     <%= f.label :specialty %><br>
     <%= f.text_field :specialty %>
   </div>
+
+  <%= fields_for(@doctor_specialty) do |ds| %>
+    <div class="field">
+      <%= ds.label "All Specialty" %><br />
+      <%= collection_select(:specialties, :id, @all_specialty, :id, :name, {},{:multiple => true}) %>
+    </div>
+  <% end %>
+
+
+
+
   <div class="field">
     <%= f.label :address %><br>
     <%= f.text_field :address %>
