@@ -5,18 +5,23 @@ class DoctorsController < ApplicationController
   # GET /doctors.json
   def index
     @doctors = Doctor.all
+    @specialty = Specialty.all
+
+
   end
 
   # GET /doctors/1
   # GET /doctors/1.json
   def show
+
+
   end
 
   # GET /doctors/new
   def new
     @doctor = Doctor.new
 
-    @all_specialty = Specialty.all
+    @specialty = Specialty.new
 
     # @doctor_specialty = @doctor.doctor_specialties.build
 
@@ -31,9 +36,9 @@ class DoctorsController < ApplicationController
   # POST /doctors.json
   def create
     @doctor = Doctor.new(doctor_params)
+    # binding.pry
 
-    # params[:specialties][:id].each do |specialty|
-    # end
+    @doctor.specialties  << Specialty.find(params[:doctor][:specialties])
 
     respond_to do |format|
       if @doctor.save
@@ -78,6 +83,6 @@ class DoctorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def doctor_params
-      params.require(:doctor).permit(:title, :first_name, :last_name, :specialty, :address, :picture)
+      params.require(:doctor).permit(:title, :first_name, :last_name, :address, :picture, :specialty_id)
     end
 end

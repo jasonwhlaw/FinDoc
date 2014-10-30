@@ -23,20 +23,15 @@
     <%= f.label :last_name %><br>
     <%= f.text_field :last_name %>
   </div>
+
   <div class="field">
     <%= f.label :specialty %><br>
-    <%= f.text_field :specialty %>
+    <%= collection_select(:doctor, :specialties, Specialty.all, :id, :name, {:include_hidden => false}, {:multiple =>true})%>
+
+    <%= #collection_select(:doctor, :specialties, Specialty.all, :id, :name, prompt: true)
+    %>
+
   </div>
-
-  <%= fields_for(@doctor_specialty) do |ds| %>
-    <div class="field">
-      <%= ds.label "All Specialty" %><br />
-      <%= collection_select(:specialties, :id, @all_specialty, :id, :name, {},{:multiple => true}) %>
-    </div>
-  <% end %>
-
-
-
 
   <div class="field">
     <%= f.label :address %><br>
