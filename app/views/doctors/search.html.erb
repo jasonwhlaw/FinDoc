@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SEARCH RESULTS</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+  <!-- Custom CSS -->
+  <link url='assets/landing-page.css' rel='stylesheet'>
+
+  <!-- Custom Fonts -->
+  <link url='assets/font-awesome.min.css' rel='stylesheet' type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="content-section-b">
+    <div class="container">
+      <div class="col-md-4" ><h3>NAME</h3></div>
+      <div class="col-md-4"><h3>ADDRESS</h3></div>
+      <div class="col-md-4"><h3></h3></div>
+    </div>
+  </div>
+
+  <div class="content-section-b">
+    <div class="container">
+      <div class="row">
+        <% @doctors.each do |d| %>
+        <div class="col-md-4" style="padding-top:40px">
+        <h4>Dr. <%= d.first_name %> <%= d.last_name %> </h4>
+        <p><%= link_to 'View More', d %></p>
+        </div>
+        <div class="col-md-4" style="padding-top:40px"><h4><%= d.address %></h4></div>
+        <div class="col-md-4" style="padding-top:20px">
+        <%= image_tag d.picture_url, class: "img-circle", size: "150x150" %>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</body>
+  <!-- jQuery Version 1.11.0 -->
+  <script url='assets/jquery-1.11.0.min.js'></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script url='assets/bootstrap.min.js'></script>
+
+</html>

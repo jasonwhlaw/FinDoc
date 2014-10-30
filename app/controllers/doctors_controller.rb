@@ -75,6 +75,11 @@ class DoctorsController < ApplicationController
     end
   end
 
+  def search
+    s = Specialty.find(params[:specialty_id])
+    @doctors = s.doctors
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_doctor
