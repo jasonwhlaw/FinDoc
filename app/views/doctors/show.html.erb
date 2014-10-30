@@ -1,27 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= @doctor.first_name %> <%= @doctor.last_name %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+  <!-- Custom CSS -->
+  <link url='assets/landing-page.css' rel='stylesheet'>
+
+  <!-- Custom Fonts -->
+  <link url='assets/font-awesome.min.css' rel='stylesheet' type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+
+
+</head>
+<body>
+
+  <div class="content-section-b" style="padding-bottom:0px">
+    <div class="container">
+      <div class="col-md-4" ><h1>Dr. <%= @doctor.first_name %> <%= @doctor.last_name %></h1></div>
+      <div class="col-md-4"><h3></h3></div>
+      <div class="col-md-4"><h3></h3></div>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="col-xs-3 col-md-offset-3"><h2><%= @doctor.title %></h2></div>
+  <div class="col-xs-3"><%= image_tag @doctor.picture_url, class: "img-thumbnail", size: "300x300" %></div>
+</div>
+
+
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @doctor.title %>
-</p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @doctor.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @doctor.last_name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @doctor.address %>
-</p>
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag @doctor.picture_url %>
-</p>
 <%= link_to 'Edit', edit_doctor_path(@doctor) %> |
 <%= link_to 'Back', doctors_path %>
+
+
+
+
+
+</body>
+</html>
