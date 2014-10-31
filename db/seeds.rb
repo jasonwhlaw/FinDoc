@@ -7,4 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
- Specialties = Specialty.create([{name: 'Cardiology'}, {name: 'Dermatology'}, {name: 'General Surgery'}
+ Specialty.create name: 'Cardiology'
+ Specialty.create name: 'Dermatology'
+ Specialty.create name: 'General Surgery'
