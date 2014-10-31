@@ -7,7 +7,10 @@ class DoctorsController < ApplicationController
     @doctors = Doctor.all
     @specialty = Specialty.all
 
+  end
 
+ # GET /map
+  def map
   end
 
   # GET /doctors/1
@@ -88,6 +91,6 @@ class DoctorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def doctor_params
-      params.require(:doctor).permit(:title, :first_name, :last_name, :address, :picture, :specialty_id, :lat, :lng, :service)
+      params.require(:doctor).permit(:title, :first_name, :last_name, :address, :picture, :specialty_id, :service, :lat, :lng)
     end
 end

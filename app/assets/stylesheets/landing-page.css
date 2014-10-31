@@ -22,6 +22,11 @@ h6 {
 
 }
 
+.map {
+  width: 800px;
+  height: 400px;
+}
+
 .lead {
     font-size: 18px;
     font-weight: 400;

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
 
   get 'search' => 'doctors#search'
+  get 'map' => 'doctors#map'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
